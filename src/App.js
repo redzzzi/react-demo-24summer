@@ -1,11 +1,8 @@
 import "./App.css";
+import InputSample from "./InputSample";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">Hi, this is demo site.</header>
-    </div>
-  );
+  return <InputSample />;
 }
 
 export default App;
