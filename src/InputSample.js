@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 function InputSample() {
   const [inputs, setInputs] = useState({
     name: "",
     nickname: "",
   });
+  const nameInput = useRef(); // useRef 훅을 사용하여 특정 DOM을 선택한다.
+
   const { name, nickname } = inputs;
   const onChange = (e) => {
     const { value, name } = e.target;
