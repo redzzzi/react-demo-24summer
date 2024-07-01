@@ -10,7 +10,7 @@ function InputSample() {
     const { value, name } = e.target;
     setInputs({
       ...inputs,
-      [name]: value,
+      [name]: value, // input 요소 내부의 name과 value 속성
     });
   };
   const onReset = () => {
