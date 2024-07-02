@@ -25,6 +25,7 @@ function App() {
       id: 1,
       username: "velopert",
       email: "public.velopert@gmail.com",
+      active: true,
     },
     {
       id: 2,
@@ -35,6 +36,7 @@ function App() {
       id: 3,
       username: "liz",
       email: "liz@example.com",
+      active: false,
     },
   ]);
 
@@ -45,6 +47,7 @@ function App() {
       id: nextId.current,
       username,
       email,
+      active: false,
     };
     setUsers([...users, user]);
 
@@ -58,6 +61,14 @@ function App() {
 
   const onRemove = (id) => {
     setUsers(users.filter((user) => user.id !== id));
+  };
+
+  const onToggle = (id) => {
+    setUsers(
+      users.map((user) =>
+        user.id === id ? { ...user, active: !user.active } : user
+      )
+    );
   };
 
   return (
