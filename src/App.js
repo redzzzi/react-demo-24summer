@@ -80,7 +80,7 @@ function App() {
         onCreate={onCreate}
         userInputRef={userInput}
       />
-      <UserList users={users} onRemove={onRemove} />
+      <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
     </>
   );
 }
