@@ -39,6 +39,7 @@ function App() {
   ]);
 
   const nextId = useRef(4);
+
   const onCreate = () => {
     const user = {
       id: nextId.current,
@@ -55,6 +56,10 @@ function App() {
     userInput.current.focus();
   };
 
+  const onRemove = (id) => {
+    setUsers(users.filter((user) => user.id !== id));
+  };
+
   return (
     <>
       <CreateUser
@@ -64,7 +69,7 @@ function App() {
         onCreate={onCreate}
         userInputRef={userInput}
       />
-      <UserList users={users} />
+      <UserList users={users} onRemove={onRemove} />
     </>
   );
 }
